@@ -36,7 +36,7 @@ class ArticleRepository extends ArticleRepositoryInterface {
     if (!article) {
       throw new NotFoundError("Article not found");
     }
-    const articleCore = uploadFileToCloudinary(article);
+    const articleCore = articleModelToArticleCore(article);
     return articleCore;
   }
 
